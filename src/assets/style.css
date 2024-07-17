@@ -1,0 +1,23 @@
+/* src/assets/styles.css */
+.my-swal {
+    background-color: #b7e2ea !important; /* Change the background color of the pop-up */
+  }
+  
+  .my-swal-title {
+    color: #7b7979 !important; /* Change the title color */
+  }
+  
+  .my-swal-content {
+    color: #4682b4 !important; /* Change the content color */
+  }
+  
+  .my-swal-confirm-button {
+    background-color: #4caf50 !important; /* Change the background color of the confirmation button */
+    color: white !important; /* Confirm button text color*/
+  }
+  
+  .my-swal-cancel-button {
+    background-color: #f69891 !important; /* Change the Cancel button background color色 */
+    color: white !important; /* Cancel button text color */
+  }
+  

@@ -1,0 +1,23 @@
+{
+  "id": "4608810",
+  "name": "Animal Type",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "510944",
+      "name": "music_fill",
+      "font_class": "musicfill",
+      "unicode": "e795",
+      "unicode_decimal": 59285
+    },
+    {
+      "icon_id": "510945",
+      "name": "music_forbid_fill",
+      "font_class": "musicforbidfill",
+      "unicode": "e796",
+      "unicode_decimal": 59286
+    }
+  ]
+}
