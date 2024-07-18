@@ -146,14 +146,13 @@ export default {
 
             this.characterTyped ++;
 
-            sentenceArray.forEach((char, index) => {
-                if( inputArray[index] !== char) {
-                    errors++;
-                }
-            });
+            if( inputArray[inputArray.length - 1] !== sentenceArray[inputArray.length - 1]) {
+                errors++;
+            }
 
-            this.totalErrors = errors;
-            const correctCharacters = this.characterTyped - errors;
+            this.totalErrors += errors;
+
+            const correctCharacters = this.characterTyped - this.totalErrors;
             this.accuracy =  Math.round((correctCharacters / this.characterTyped) * 100);
             if (this.accuracy < 0) {
                 this.accuracy = 0;
