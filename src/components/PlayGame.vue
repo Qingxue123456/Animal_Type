@@ -13,7 +13,7 @@
         ></typingArea>
         <div class="button">
             <button @click="startGame">Restart</button>
-            <button @click="finishGame">End Game</button>
+            <button @click="interruptGame">End Game</button>
         </div>
     </div>
   </div>
@@ -23,7 +23,6 @@
             <div>Accuracy: {{ accuracy }}%</div>
             <div>Errors: {{ totalErrors }}</div>
             <div>Characters Per Minute: {{ cpm }}</div>
-            <div>Words Per Minute: {{ wpm }}</div>
         </div>
         <button @click="returnNewGame">Return</button>
     </div>
@@ -38,7 +37,7 @@ export default {
     components: {
         TypingArea
     },
-    props: ['level','leftWidth', 'rightWidth','isGameStarted'],
+    props: ['level','leftWidth', 'rightWidth','isGameStarted','selectTime'],
     emits: ['currentlyType', 'failType','showLevelPage'],
     data() {
         return {
@@ -50,6 +49,7 @@ export default {
             timeLimit: 60,
             timeLeft:60,
             timer: null,
+            totalTime: 0,
 
             // Game
             currentSentence: "",
@@ -66,13 +66,12 @@ export default {
             characterTyped: 0,
             accuracy: 100,
             cpm: 0, // characters per minute
-            wpm: 0  // words per minute
-
         }
     },
     methods: {
         // Game
         startGame() {
+            this.timeLimit = this.selectTime;
             this.resetValues();
             this.updateSentence();
             this.timer = setInterval(this.updateTimer, 1000);
@@ -82,11 +81,11 @@ export default {
         resetValues() {
             this.order = 1;
             this.timeLeft = this.timeLimit;
+            this.totalTime = 0;
             this.totalErrors = 0;
             this.characterTyped = 0;
             this.accuracy = 100;
             this.cpm = 0;
-            this.wpm = 0;
             this.inputValue = "";
             this.gameOver = false;
             this.success = false;
@@ -106,6 +105,7 @@ export default {
                 clearInterval(this.timer);
                 this.timeLeft = this.timeLimit;
                 this.timer = setInterval(this.updateTimer, 1000);
+                this.totalTime += 60;
             } 
         },
 
@@ -130,7 +130,6 @@ export default {
                const filteredSentence = filteredlevel.filter(item => item.order === this.order);
                if (filteredSentence) {
                 this.currentSentence = filteredSentence[0].sentence;
-                console.log(this.currentSentence);
                } 
             }
         },
@@ -156,9 +155,13 @@ export default {
             this.totalErrors = errors;
             const correctCharacters = this.characterTyped - errors;
             this.accuracy =  Math.round((correctCharacters / this.characterTyped) * 100);
+            if (this.accuracy < 0) {
+                this.accuracy = 0;
+            }
 
             // Currently type one sentence
             if(this.inputValue === this.currentSentence) {
+                this.totalTime = this.totalTime + 60 - this.timeLeft;
                 this.order ++;
                 this.updateSentence();
                 this.inputValue = "";
@@ -174,13 +177,19 @@ export default {
             }
         },
 
+        // Interrupt Game
+        interruptGame() {
+            this.totalTime = this.totalTime + 60 - this.timeLeft;
+            this.finishGame();
+        },
+
         // Finish Game
         finishGame() {
             clearInterval(this.timer);
             clearInterval(this.endGameTimer);
             this.gameOver = true;
-            this.cpm = Math.round((this.characterTyped / this.timeLimit) * 60);
-            this.wpm = Math.round(((this.characterTyped / 5) / this.timeLimit) * 60);
+            this.cpm = ((this.characterTyped / this.totalTime) * 60).toFixed(2);
+            console.log("totalTime: " + this.totalTime + " timeLeft: " + this.timeLeft + " characterTyped: " +  this.characterTyped)
         },
 
         // Return

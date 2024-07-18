@@ -32,6 +32,7 @@
           :leftWidth="leftWidth"
           :rightWidth="rightWidth"
           :isGameStarted="isGameStarted"
+          :selectTime="sendDifficulty"
           @currentlyType="leftLargen"
           @failType="rightLargen"
           @showLevelPage="onShowLevelPage"
@@ -71,6 +72,7 @@ export default {
       // Play Game
       isGameStarted: false,
       selectedLevel: null,
+      sendDifficulty: this.$route.query.difficulty
     }
   },
   methods: {
@@ -84,8 +86,8 @@ export default {
     },
     // fail to type one sentence
     rightLargen() {
-      this.leftWidth -= 12.5;
-      this.rightWidth += 12.5;
+      this.leftWidth -= 15;
+      this.rightWidth += 15;
       if (this.rightWidth > 100) { this.rightWidth = 100 }
     },
 

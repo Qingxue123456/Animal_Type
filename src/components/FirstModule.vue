@@ -14,7 +14,7 @@
     <div class="mainBlock"></div>
     <div class="option">
       <!-- New Game -->
-      <div><router-link to="/new-game">New Game</router-link></div>
+      <div><router-link :to= "{ path: '/new-game', query:{ difficulty}}" >New Game</router-link></div>
       <!-- Difficulat Selection -->
       <div @click="showDifficultySelect">Difficulty Selection</div>
       <!-- Game Introduction -->
@@ -41,6 +41,11 @@ export default {
       isPlaying: state => state.isPlaying
     })
   },
+  data() {
+    return {
+      difficulty: 60
+    }
+  },
   methods: {
     // Difficulty
     showDifficultySelect () {
@@ -61,6 +66,7 @@ export default {
         if (result.isConfirmed) {
           console.log('Easy difficulty selected');
         } else if (result.isDenied) {
+          this.difficulty = 45;
           console.log('Difficult difficulty selected');
         }
       });
