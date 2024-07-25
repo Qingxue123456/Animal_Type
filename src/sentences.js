@@ -1,41 +1,41 @@
 export const sentencesArray = [
-    // 1
-    { id: 1, order: 1, sentence: 'Aurora, a young polar bear, loved the Arctic ice. She played and fished with her family every day.'},
-    { id: 1, order: 2, sentence: 'One day, her mother warned her about oil spills.'},
-    { id: 1, order: 3, sentence: 'Her mother explained that oil could leak into the ocean.'},
-    { id: 1, order: 4, sentence: 'This pollution was dangerous for polar bears.'},
-    { id: 1, order: 5, sentence: 'Determined to help, Aurora sought out humans. She found scientists working to stop oil spills.'},
-    { id: 1, order: 6, sentence: 'They used barriers and technology to protect the water. Inspired, Aurora told the other animals.'},
-    { id: 1, order: 7, sentence: 'Together, they decided to support the scientists.'},
-    { id: 1, order: 8, sentence: 'They spread the word to be careful with oil. Over time, their efforts worked.'},
-    { id: 1, order: 9, sentence: 'Oil spills became rare, and the Arctic stayed clean. Aurora was proud of their success.'},
-    { id: 1, order: 10, sentence: 'She knew they had protected their home for future polar bears. Working together, they kept the Arctic safe.'},
+    // 1 Polar Bear
+    { id: 1, order: 1, sentence: "In the Arctic's icy expanse, Dr. Emma Frost trudged through snow, her eyes scanning for polar bears."},
+    { id: 1, order: 2, sentence: 'Melting ice crackled beneath her feet, a stark reminder of the warming world she studied tirelessly.'},
+    { id: 1, order: 3, sentence: 'Through her binoculars, Emma spotted a mother bear and cubs, their ribs visible beneath matted fur.'},
+    { id: 1, order: 4, sentence: 'Back at the research station, satellite images revealed vast blue where white ice once dominated the landscape.'},
+    { id: 1, order: 5, sentence: "Emma's Inuit guide shared stories of changing hunting patterns, both for bears and for his people."},
+    { id: 1, order: 6, sentence: "In a distant city, policymakers debated climate action while Emma's urgent reports piled on their desks."},
+    { id: 1, order: 7, sentence: 'Children in classrooms across the globe learned about polar bears, becoming advocates for Arctic conservation.'},
+    { id: 1, order: 8, sentence: "Emma's team tagged another bear, its data joining a growing network of climate change evidence."},
+    { id: 1, order: 9, sentence: 'As temperatures rose, tourists flocked north, hoping to glimpse the iconic bears before it was too late.'},
+    { id: 1, order: 10, sentence: 'In the face of melting ice and uncertain futures, Emma and her bears persevered, symbols of resilience.'},
 
-    // 2
-    { id: 2, order: 1, sentence: 'In the vast Arctic, Luna, a young polar bear, roamed freely. She played on icy shores and hunted seals with her family.'},
-    { id: 2, order: 2, sentence: "One day, Luna encountered a strange slick on the water's surface."},
-    { id: 2, order: 3, sentence: 'Her mother explained it was from an oil spill. Luna felt sadness for her endangered home.'},
-    { id: 2, order: 4, sentence: 'Determined to help, Luna joined forces with Arctic scientists.'},
-    { id: 2, order: 5, sentence: 'They monitored the ocean for signs of spills and worked to clean them up swiftly.'},
-    { id: 2, order: 6, sentence: 'Luna also rallied other Arctic animals to spread awareness.'},
-    { id: 2, order: 7, sentence: 'Together, they urged humans to protect their fragile ecosystem.'},
-    { id: 2, order: 8, sentence: 'Their efforts paid off as awareness grew. Oil drilling became more regulated, and spills decreased.'},
-    { id: 2, order: 9, sentence: 'Luna was proud to see her Arctic home cleaner and safer.'},
-    { id: 2, order: 10, sentence: 'She knew their united efforts had saved many lives, including polar bears like herself.'},
+    // 2 Polar Bear
+    { id: 2, order: 1, sentence: 'The Arctic glacier stood silently, witnessing centuries of harsh weather and the ebb and flow of life.'},
+    { id: 2, order: 2, sentence: "As global temperatures rose, the glacier felt itself slowly melting, becoming increasingly fragile with each passing year."},
+    { id: 2, order: 3, sentence: 'The glacier watched a polar bear mother and her cubs struggling to find food on the shrinking ice floes.'},
+    { id: 2, order: 4, sentence: 'Each summer, the glacier heard more ice breaking and saw more polar bears forced to swim towards distant land.'},
+    { id: 2, order: 5, sentence: 'The glacier reminisced about the vast ice sheets of the past, where polar bears once roamed and hunted freely.'},
+    { id: 2, order: 6, sentence: "Scientists arrived at the glacier's base, measuring its thickness and recording the annual ice loss with growing concern."},
+    { id: 2, order: 7, sentence: 'The glacier observed greenhouse gases emitted by humans far away, understanding these invisible substances were accelerating its decline.'},
+    { id: 2, order: 8, sentence: 'Local Inuit people shared stories of the glacier with their children, teaching them to cherish and protect this ancient icy world.'},
+    { id: 2, order: 9, sentence: 'Though constantly shrinking, the glacier strived to maintain the surrounding ecological balance, providing habitat for Arctic creatures.'},
+    { id: 2, order: 10, sentence: 'The glacier silently hoped humans would take action, allowing it to continue guarding this Arctic realm of life.'},
 
-    // 3
-    { id: 3, order: 1, sentence: 'Far in the Arctic wilderness, Finn, a curious polar bear cub, loved exploring icy landscapes.'},
-    { id: 3, order: 2, sentence: 'One day, while playing near the shore, he noticed strange patches on the ice and oily sheens in the water.'},
-    { id: 3, order: 3, sentence: 'Concerned, Finn asked his mother what it was. His mother explained sadly that it was from an oil spill caused by humans drilling nearby.'},
-    { id: 3, order: 4, sentence: 'Finn felt a pang of worry for his fellow bears and their fragile habitat. Determined to make a difference, Finn set out to learn more about the issue.'},
-    { id: 3, order: 5, sentence: 'He met an environmental scientist who taught him about the dangers of oil spills and their impact on Arctic wildlife.'},
-    { id: 3, order: 6, sentence: 'Inspired, Finn rallied his bear friends and other animals to raise awareness among humans.'},
-    { id: 3, order: 7, sentence: 'They organized protests and campaigns to advocate for stricter regulations on oil drilling in the Arctic.'},
-    { id: 3, order: 8, sentence: 'Their efforts gained momentum, and soon, stricter measures were put in place to prevent spills.'},
-    { id: 3, order: 9, sentence: 'Their efforts gained momentum, and soon, stricter measures were put in place to prevent spills.'},
-    { id: 3, order: 10, sentence: 'They knew their actions had helped protect not only polar bears but also the entire Arctic ecosystem.'},
+    // 3 Polar Bear
+    { id: 3, order: 1, sentence: "Nanuk's massive paws crunched on the Arctic ice as he patrolled his territory. Suddenly, his sensitive nose detected something terribly wrong."},
+    { id: 3, order: 2, sentence: 'The strange scent grew stronger with each step. Rounding a towering iceberg, Nanuk froze at the sight of black goo spreading across the water.'},
+    { id: 3, order: 3, sentence: 'A distressed seabird flapped helplessly nearby, its wings heavy with thick oil. Nanuk watched with a mixture of curiosity and growing concern'},
+    { id: 3, order: 4, sentence: "Where were the plump seals and silvery fish? Nanuk's stomach growled fiercely as he searched the contaminated waters, finding no trace of prey."},
+    { id: 3, order: 5, sentence: "Strange figures appeared on the horizon, catching Nanuk's attention. Humans in bulky suits moved awkwardly, working to contain the expanding oil slick."},
+    { id: 3, order: 6, sentence: "Nanuk's usually pristine white coat now bore dark, oily streaks. He licked his paw instinctively but recoiled at the foul, unfamiliar taste."},
+    { id: 3, order: 7, sentence: 'Other polar bears began to gather, their confusion evident. Some rubbed frantically against ice chunks, trying desperately to clean their contaminated fur.'},
+    { id: 3, order: 8, sentence: "Humans with large cameras approached cautiously. Nanuk stood his ground, watching curiously as they documented the disaster's impact on wildlife."},
+    { id: 3, order: 9, sentence: 'As days passed, Nanuk learned to navigate around the worst-hit areas. He began guiding other bears to cleaner hunting grounds, adapting to change.'},
+    { id: 3, order: 10, sentence: "Though the oil spill's effects lingered, Nanuk's resilience never wavered. In his enduring strength, there remained hope for the Arctic's future."},
 
-    // 4
+    // 4 Dolphin
     { id: 4, order: 1, sentence: 'In the vast Arctic, Nanuk, a wise polar bear, safeguarded his icy realm diligently.'},
     { id: 4, order: 2, sentence: 'He observed human activities with growing concern, especially oil drilling that threatened their fragile ecosystem.'},
     { id: 4, order: 3, sentence: 'Gathering Arctic animals—seals, whales, and seabirds—they devised a plan to address the looming danger.'},
@@ -47,7 +47,7 @@ export const sentencesArray = [
     { id: 4, order: 9, sentence: 'Nanuk and his allies monitored the environment closely, educating others about conservation efforts.'},
     { id: 4, order: 10, sentence: 'Celebrating their successes, Nanuk and his companions continued to advocate for responsible practices and conservation awareness, ensuring lasting protection for their beloved Arctic home.'},
 
-    // 5
+    // 5 Dolphin
     { id: 5, order: 1, sentence: 'In the Arctic tundra, Koda, a young polar bear, enjoyed the pristine snow and clear waters.'},
     { id: 5, order: 2, sentence: 'One day, he discovered a slick of oil on the ice. Alarmed, Koda shared his findings with his family and friends.'},
     { id: 5, order: 3, sentence: 'They realized that an oil spill from a distant rig had reached their home.'},
@@ -59,7 +59,7 @@ export const sentencesArray = [
     { id: 5, order: 9, sentence: 'Oil spills became less frequent, and the Arctic began to recover. Koda became a hero among his kind, inspiring others to protect their environment.'},
     { id: 5, order: 10, sentence: 'He continued to work with the environmentalists, ensuring their home remained safe.'},
 
-    // 6
+    // 6 Dolphin
     { id: 6, order: 1, sentence: 'In the Arctic, a young polar bear named Kai discovered a group of humans setting up an oil drilling site.'},
     { id: 6, order: 2, sentence: 'He watched them with growing concern. Kai knew the dangers of oil spills and decided to act.'},
     { id: 6, order: 3, sentence: 'He traveled to a nearby village where friendly scientists were studying the Arctic ecosystem.'},
@@ -71,7 +71,7 @@ export const sentencesArray = [
     { id: 6, order: 9, sentence: "The Arctic community, inspired by Kai's efforts, launched a campaign promoting environmental awareness."},
     { id: 6, order: 10, sentence: 'They reached out to other drilling sites, spreading the message of conservation. Over time, the incidence of oil spills decreased significantly.'},
 
-    // 7
+    // 7 Penguin
     { id: 7, order: 1, sentence: 'In the Arctic, a young polar bear named Kiana noticed her icy home was melting. An oil spill had reached their pristine shores.'},
     { id: 7, order: 2, sentence: 'Kiana decided to act quickly to save her habitat. She swam to a research station where scientists studied the Arctic environment.'},
     { id: 7, order: 3, sentence: "The scientists listened to Kiana's concerns and agreed to help. They organized a cleanup team and brought advanced technology to contain the spill."},
@@ -83,7 +83,7 @@ export const sentencesArray = [
     { id: 7, order: 9, sentence: 'Kiana became a symbol of hope and determination. Her story reminded everyone that working together can create a sustainable future.'},
     { id: 7, order: 10, sentence: "The Arctic flourished once again, thanks to Kiana's bravery. She ensured that future generations of polar bears would have a safe, thriving home."},
 
-    // 8
+    // 8 Penguin
     { id: 8, order: 1, sentence: 'In the Arctic, a clever polar bear named Nanuq discovered a hidden oil spill. The contaminated water endangered her family and other wildlife.'},
     { id: 8, order: 2, sentence: 'Nanuq decided to take immediate action. She sought out a group of humans known for their environmental activism and expertise in oil spill cleanup.'},
     { id: 8, order: 3, sentence: "The activists, inspired by Nanuq's determination, agreed to help. They brought advanced equipment to the Arctic and worked tirelessly to clean the spill."},
@@ -95,7 +95,7 @@ export const sentencesArray = [
     { id: 8, order: 9, sentence: 'With their combined efforts, the Arctic thrived once more. Nanuq and her friends ensured a safe and sustainable future for all polar bears.'},
     { id: 8, order: 10, sentence: "Nanuq's legacy lived on, reminding everyone that even one determined individual can make a huge difference in protecting the environment."},
 
-    // 9
+    // 9 Penguin
     { id: 9, order: 1, sentence: 'In the icy Arctic, a wise elder polar bear named Tundra noticed the changing environment. Oil spills were becoming more frequent, threatening their way of life.'},
     { id: 9, order: 2, sentence: 'Tundra called a meeting of all the Arctic animals. They decided to form a council to address the growing problem and find solutions together.'},
     { id: 9, order: 3, sentence: 'The council reached out to human environmental activists for help. They shared their concerns and asked for assistance in preventing further oil spills.'},
@@ -106,16 +106,4 @@ export const sentencesArray = [
     { id: 9, order: 8, sentence: 'Over time, the Arctic began to heal. The clear waters and pristine ice returned, providing a safe habitat for all its inhabitants.'},
     { id: 9, order: 9, sentence: 'The Arctic animals and their human allies celebrated their success. They remained vigilant, knowing their continued cooperation was essential for a sustainable future.'},
     { id: 9, order: 10, sentence: 'Through unity and determination, they ensured the Arctic remained a sanctuary for polar bears and all its wildlife for generations to come.'},
-
-    // 10
-    { id: 10, order: 1, sentence: 'In the icy Arctic, a polar bear named Siku noticed fewer fish and dirty water. She discovered an oil spill had contaminated their fishing grounds.'},
-    { id: 10, order: 2, sentence: 'Siku decided to investigate the source of the spill. She swam to a distant shore where she found an old, leaking oil pipeline.'},
-    { id: 10, order: 3, sentence: 'Determined to save her home, Siku returned to alert the Arctic Council, a group of animals dedicated to protecting their environment.'},
-    { id: 10, order: 4, sentence: 'The council agreed to take immediate action. They contacted human environmental activists who specialized in cleaning up oil spills and repairing pipelines.'},
-    { id: 10, order: 5, sentence: 'The activists arrived quickly, bringing advanced equipment to stop the leak and clean the polluted waters. Siku and the council assisted them tirelessly.'},
-    { id: 10, order: 6, sentence: 'Together, they restored the damaged area and strengthened the pipeline to prevent future leaks. The Arctic waters gradually returned to their pristine state.'},
-    { id: 10, order: 7, sentence: 'Siku and the council decided to monitor all pipelines regularly. They educated other animals on recognizing and reporting potential oil spills.'},
-    { id: 10, order: 8, sentence: 'Their proactive efforts significantly reduced oil spill incidents. The Arctic flourished once more, providing a healthy habitat for polar bears and other wildlife.'},
-    { id: 10, order: 9, sentence: 'Their proactive efforts significantly reduced oil spill incidents. The Arctic flourished once more, providing a healthy habitat for polar bears and other wildlife.'},
-    { id: 10, order: 10, sentence: 'Through their united efforts, Siku and her friends ensured the Arctic remained a safe, thriving home for generations of polar bears to come.'},
 ] 

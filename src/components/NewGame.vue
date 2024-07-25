@@ -1,9 +1,10 @@
 <template>
   <div class="newGame">
-    <!-- Pictures -->
-    <div class="picture">
-      <img id="leftImage" :style="{ width: leftWidth + '%'}" src="image&video/left_1.jpg" alt="Left Image">
-      <img id="rightImage" :style="{ width: rightWidth + '%'}" src="image&video/right_1.webp" alt="Right Image">
+    <!-- Background -->
+    <div class="backGround">
+      <img class="threeAnimal" src="image&video/cover_1.jpg" alt="picture" v-if="!isGameStarted">
+      <img id="leftImage" :style="{ width: leftWidth + '%'}" :src="leftImageSrc" alt="Left Image" v-if="isGameStarted">
+      <img id="rightImage" :style="{ width: rightWidth + '%'}" :src="rightImageSrc" alt="Right Image" v-if="isGameStarted">
     </div>
       <div class="zIndex_1">
         <div class="header">
@@ -19,8 +20,29 @@
           <div class="gameLevel" v-if="!isGameStarted">
             <div class="gameLevelFont" :class="{ 'blink-text': isBlinking }">Please select a game level.</div>
             <div class="button-container">
-              <div class="button" v-for="index in buttons" :key="index">
-                <button @click="startGame(index)">{{ index }}</button>
+              <div class="polarBear">
+                <div class="animalName">Polar Bear</div>
+                <div>
+                  <button  @click="startGame(1)">1</button>
+                  <button  @click="startGame(2)">2</button>
+                  <button  @click="startGame(3)">3</button>
+                </div>
+              </div>
+              <div class="dolphin">
+                <div class="animalName">Dolphin</div>
+                <div>
+                  <button  @click="startGame(4)">1</button>
+                  <button  @click="startGame(5)">2</button>
+                  <button  @click="startGame(6)">3</button>
+                </div>
+              </div>
+              <div class="penguin">
+                <div class="animalName">Penguin</div>
+                <div>
+                  <button  @click="startGame(7)">1</button>
+                  <button  @click="startGame(8)">2</button>
+                  <button  @click="startGame(9)">3</button>
+                </div>
               </div>
             </div>
             <div class="hint">You need to correctly type the words on the screen in order, to help the polar bear on the left protect the Arctic ice caps!</div>
@@ -33,9 +55,9 @@
           :rightWidth="rightWidth"
           :isGameStarted="isGameStarted"
           :selectTime="sendDifficulty"
-          @currentlyType="leftLargen"
-          @failType="rightLargen"
           @showLevelPage="onShowLevelPage"
+          @failType="rightLargen"
+          @currentlyType="leftLargen"
           ></PlayGame>
     </div>
 
@@ -54,41 +76,70 @@ export default {
   style: `
     @import '@/assets/styles/component-specific-styles.css';
   `,
-  // Music
+
   computed: {
+    // Music
     ...mapState('music', {
       isPlaying: state => state.isPlaying
-    })
+    }),
+
+    // Background
+    
+    leftImageSrc() {
+        if (this.selectedLevel === 1 || this.selectedLevel === 2 || this.selectedLevel === 3) {
+            return 'image&video/left_1.jpg';
+        } else if (this.selectedLevel === 4 || this.selectedLevel === 5 || this.selectedLevel === 6) {
+            return 'image&video/left_2.webp';
+        } else if (this.selectedLevel === 7 || this.selectedLevel === 8 || this.selectedLevel === 9) {
+            return 'image&video/left_3.webp';
+        }
+        return 'image&video/cover_1';
+    },
+    rightImageSrc() {
+        if (this.selectedLevel === 1 || this.selectedLevel === 2 || this.selectedLevel === 3) {
+            return 'image&video/right_1.webp';
+        } else if (this.selectedLevel === 4 || this.selectedLevel === 5 || this.selectedLevel === 6) {
+            return 'image&video/right_2.jpg';
+        } else if (this.selectedLevel === 7 || this.selectedLevel === 8 || this.selectedLevel === 9) {
+            return 'image&video/right_3.jpg';
+        }
+        return 'image&video/cover_1';
+    }
   },
+
   data() {
     return {
-      // Picture
-      leftWidth: 50,
-      rightWidth: 50,
-      // Button
-      buttons: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       // Font flicker
       isBlinking: false,
       // Play Game
       isGameStarted: false,
       selectedLevel: null,
-      sendDifficulty: this.$route.query.difficulty
+      sendDifficulty: this.$route.query.difficulty,
+
+      // Picture
+      leftWidth: 50,
+      rightWidth: 50,
     }
   },
   methods: {
-
     // Change Picture
     // Currently type one sentence
     leftLargen() {
-      this.leftWidth += 5;
-      this.rightWidth -= 5;
-      if (this.leftWidth > 100) { this.leftWidth = 100 }
+    this.leftWidth += 5;
+    this.rightWidth -= 5;
+    if (this.leftWidth > 100) { 
+      this.leftWidth = 100 ;
+      this.rightWidth = 0;
+    }
     },
     // fail to type one sentence
     rightLargen() {
-      this.leftWidth -= 15;
-      this.rightWidth += 15;
-      if (this.rightWidth > 100) { this.rightWidth = 100 }
+    this.leftWidth -= 20;
+    this.rightWidth += 20;
+    if (this.rightWidth > 100) { 
+      this.rightWidth = 100 ;
+      this.leftWidth = 0;
+    }
     },
 
     // Music
@@ -112,8 +163,6 @@ export default {
     startGame(index) {
       this.selectedLevel = index;
       this.isGameStarted = true;
-      this.leftWidth = 50;
-      this.rightWidth = 50;
     },
 
     // Show level Page
@@ -129,17 +178,35 @@ export default {
 
 <style scoped>
 .newGame {
-  height: auto;
+  height: 100vh;
   text-align: center;;
   color:white ;
+  width: 100%;
 }
 
-.picture {
+/* Background */
+.backGround {
   position: absolute;
-  height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
   overflow: hidden;
   z-index: -1;
+  object-fit: cover;
 }
+
+.backGround .threeAnimal {
+  min-width: 100%; 
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #leftImage {
   height: 100%;
   object-fit: cover;
@@ -151,10 +218,14 @@ export default {
   object-fit: cover;
   object-position: right;
 }
+
+/* Music */
 .iconfont {
   display: flex;
   z-index: 1;
 }
+
+/* Game Level */
 .title {
   color: aliceblue;
   height: 100px;
@@ -199,24 +270,32 @@ export default {
   text-shadow: 2px 2px 4px #000000;
   letter-spacing: 4px;
   margin-top: 10px;
-  margin-bottom: 110px;
+  margin-bottom: 40px;
   z-index: 1;
   animation: blink 1s infinite;
 }
 
 .button-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); 
-  gap: 30px 50px; 
+  height: 350px;
+  width: 800px;
   justify-items: center; 
   align-items: center;
   z-index: 1;
 }
 
-.button button {
+.animalName {
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #000000;
+  letter-spacing: 2px;
+  align-content: center;
+}
+
+button {
   /* Box */
+  margin: 5px 50px;
   font-size: 24px; 
-  padding: 10px 20px; 
   text-align: center; 
   width: 100px; 
   height: 60px; 
@@ -232,7 +311,7 @@ export default {
   color: rgb(96, 96, 96);
 }
 
-.button button:hover {
+button:hover {
   background-color: bisque;
 }
 
@@ -245,7 +324,7 @@ export default {
   font-weight: bold;
   text-shadow: 2px 2px 4px #000000;
   letter-spacing: 4px;
-  margin-top: 50px;
+  margin-top: 20px;
   z-index: 1;
   align-content: center;
 }

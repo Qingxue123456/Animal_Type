@@ -8,7 +8,6 @@
         :sentence="currentSentence"
         :inputValue="inputValue"
         @inputChange="handleInputChange"
-        @startGame="startGame"
         :disabled="gameOver"
         ></typingArea>
         <div class="button">
@@ -37,8 +36,8 @@ export default {
     components: {
         TypingArea
     },
-    props: ['level','leftWidth', 'rightWidth','isGameStarted','selectTime'],
-    emits: ['currentlyType', 'failType','showLevelPage'],
+    props: ['level','isGameStarted','selectTime','leftWidth','rightWidth'],
+    emits: ['showLevelPage','failType','currentlyType'],
     data() {
         return {
             // Sentences
@@ -46,8 +45,8 @@ export default {
             order: 1,
 
             // Timer
-            timeLimit: 60,
-            timeLeft:60,
+            timeLimit: null,
+            timeLeft: null,
             timer: null,
             totalTime: 0,
 
@@ -105,19 +104,19 @@ export default {
                 clearInterval(this.timer);
                 this.timeLeft = this.timeLimit;
                 this.timer = setInterval(this.updateTimer, 1000);
-                this.totalTime += 60;
+                this.totalTime += this.selectTime;
             } 
         },
 
         // Whether to End Game
         endGame() {
             // fail four times
-            if( this.rightWidth >= 100) {
+            if( this.rightWidth === 100) {
                 this.finishGame();
             }
 
             // 
-            if(this.leftWidth >= 100) {
+            if(this.leftWidth === 100) {
                 this.success = true;
                 this.finishGame();
             }
@@ -160,7 +159,7 @@ export default {
 
             // Currently type one sentence
             if(this.inputValue === this.currentSentence) {
-                this.totalTime = this.totalTime + 60 - this.timeLeft;
+                this.totalTime = this.totalTime + this.selectTime - this.timeLeft;
                 this.order ++;
                 this.updateSentence();
                 this.inputValue = "";
@@ -178,7 +177,7 @@ export default {
 
         // Interrupt Game
         interruptGame() {
-            this.totalTime = this.totalTime + 60 - this.timeLeft;
+            this.totalTime = this.totalTime + this.selectTime - this.timeLeft;
             this.finishGame();
         },
 
@@ -195,6 +194,9 @@ export default {
         returnNewGame() {
             this.$emit('showLevelPage');
         }
+    },
+    mounted() {
+        this.startGame()
     }
 }
 </script>
@@ -240,8 +242,8 @@ export default {
     margin: 50px auto;
     width: 800px;
     height: 400px;
-    background-color: rgb(189, 183, 183,0.5);
     color: aliceblue;
+    background-color: rgb(189, 183, 183,0.5);
     font-weight: bold;
     text-shadow: 2px 2px 4px #000000;
     letter-spacing: 4px;

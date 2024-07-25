@@ -1,10 +1,8 @@
 <template>
   <div class="firstModule">
     <!-- Background Video -->
-    <div class="background-video-container">
-      <video autoplay muted loop>
-        <source src="image&video/video.mp4" type="video/mp4" />
-      </video>
+    <div class="background-cover-container">
+      <img id="cover"  src="image&video/cover_1.jpg" alt="cover">
     </div>
     <!-- Title -->
     <div class="title">
@@ -43,34 +41,41 @@ export default {
   },
   data() {
     return {
-      difficulty: 60
+      difficulty: 95
     }
   },
   methods: {
     // Difficulty
     showDifficultySelect () {
       Swal.fire({
-        title: "Select Difficulty",
-        showDenyButton: true,
+        title: 'Select Difficulty',
+        html: `
+          <div class="difficulty-buttons">
+            <button class="swal2-confirm swal2-styled" onclick="window.dispatchEvent(new CustomEvent('difficulty-selected', { detail: 95 }))">Easy</button>
+            <button class="swal2-confirm swal2-styled" onclick="window.dispatchEvent(new CustomEvent('difficulty-selected', { detail: 70 }))">Medium</button>
+            <button class="swal2-confirm swal2-styled" onclick="window.dispatchEvent(new CustomEvent('difficulty-selected', { detail: 45 }))">Difficult</button>
+          </div>
+        `,
         showCancelButton: true,
-        confirmButtonText: "Easy",
-        denyButtonText: `Difficult`,
+        showConfirmButton: false,
+        cancelButtonText: 'Cancel',
         customClass: {
-          popup: 'my-swal',
-          title: 'my-swal-title',
-          content: 'my-swal-content',
-          confirmButton: 'my-swal-confirm-button',
-          cancelButton: 'my-swal-cancel-button'
-        }
-      }).then((result) => {
-        if (result.isConfirmed) {
-          console.log('Easy difficulty selected');
-        } else if (result.isDenied) {
-          this.difficulty = 45;
-          console.log('Difficult difficulty selected');
+          container: 'custom-swal-container'
+        },
+        didOpen: () => {
+          window.addEventListener('difficulty-selected', this.handleDifficultySelection);
+        },
+        willClose: () => {
+          window.removeEventListener('difficulty-selected', this.handleDifficultySelection);
         }
       });
     },
+    handleDifficultySelection(event) {
+      Swal.close();
+      this.difficulty = event.detail;
+      console.log('Selected difficulty:', this.difficulty);
+    },
+  
     // Music
     ...mapActions('music', ['playMusic', 'pauseMusic']),
     musicSelect () {
@@ -110,7 +115,7 @@ export default {
     text-align: center;
     color:white ;
 }
-.background-video-container {
+.background-cover-container {
   position: absolute;
   top: 0;
   left: 0;
@@ -120,7 +125,7 @@ export default {
   z-index: -1;
   object-fit: cover;
 }
-.background-video-container video {
+.background-cover-container img {
   min-width: 100%; 
   min-height: 100%;
   width: auto;

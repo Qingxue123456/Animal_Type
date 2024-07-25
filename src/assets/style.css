@@ -1,23 +1,42 @@
-/* src/assets/styles.css */
-.my-swal {
-    background-color: #b7e2ea !important; /* Change the background color of the pop-up */
-  }
-  
-  .my-swal-title {
-    color: #7b7979 !important; /* Change the title color */
-  }
-  
-  .my-swal-content {
-    color: #4682b4 !important; /* Change the content color */
-  }
-  
-  .my-swal-confirm-button {
-    background-color: #4caf50 !important; /* Change the background color of the confirmation button */
-    color: white !important; /* Confirm button text color*/
-  }
-  
-  .my-swal-cancel-button {
-    background-color: #f69891 !important; /* Change the Cancel button background color色 */
-    color: white !important; /* Cancel button text color */
-  }
-  
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.swal2-popup {
+  background-color: rgb(255, 255, 255,0.8); 
+  height: 250px;
+  width: 470px;
+}
+
+.swal2-html-container {
+  padding: 0;
+  margin: 0;
+}
+
+.custom-swal-container .difficulty-buttons {
+display: flex;
+justify-content: space-between;
+}
+
+.custom-swal-container .difficulty-buttons button {
+flex: 1;
+margin: 0 1rem;
+background-color: rgb(90, 152, 244);
+}
+
+.custom-swal-container .difficulty-buttons button:hover{
+background-color: rgb(67, 116, 189)
+}
+
+/* Cancel Button */
+.swal2-actions {
+  margin: 0;
+  padding: 0;
+}
+
+.swal2-cancel {
+  height: 42px;
+  width: 100px;
+  text-align: center;
+}

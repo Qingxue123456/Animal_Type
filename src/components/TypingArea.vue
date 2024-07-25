@@ -14,7 +14,6 @@
   :disabled="disabled"
   v-model="localInputValue"
   @input="onInputChange"
-  @focus="$emit('startGame')"
   class="input_area"
   v-focusTextArea
   ></textarea>
@@ -59,11 +58,10 @@ export default {
             return '';
         }
     }
-
 }
 </script>
 
-<style>
+<style scoped>
 .showingArea {
     margin: 20px auto;
     width: 800px;

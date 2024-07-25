@@ -7,9 +7,12 @@
       <br>
       <div class="content">
         <br>
-        <div>"Animal Type" is a delightful typing game full of childlike wonder. In this game, you need to correctly type the words that appear on the screen in sequence. Each time you successfully type a word, the polar bear's world expands. When the polar bear's world covers the entire screen, you win the game.</div>
         <br>
-        <div>However, if you fail to complete the words within the given time, the polluted world will encroach upon the polar bear's space. If the polluted world takes over the entire screen, it's game over. We hope you do your best to protect our world and achieve sustainable development.</div>
+        <div>"Animal Type" is a delightful typing game full of childlike wonder. In this game, you need to correctly type the words that appear on the screen in sequence. Each time you successfully type a word, the animal's world expands. When the animal's world covers the entire screen, you win the game.</div>
+        <br>
+        <div>However, if you fail to complete the words within the given time, the polluted world will encroach upon the animal's space. If the polluted world takes over the entire screen, it's game over.</div>
+        <br>
+        <div> We hope you do your best to protect our world and achieve sustainable development.</div>
       </div>
       <button @click="backToPage">Return</button>
     </div>
@@ -30,7 +33,7 @@ export default {
 <style scoped>
 .gameIntro {
     height: 800px;
-    background: url('/public/image&video/title.webp') center center/cover no-repeat;
+    background: url('/public/image&video/cover_1.jpg') center center/cover no-repeat;
     color:white ;
     text-align: center;
     height: 100vh;
@@ -46,12 +49,17 @@ export default {
   padding: 100px auto; 
 }
 .content {
-  width: 550px;
-  height: 400px;
+  width: 600px;
+  height: 500px;
   margin: 10px auto;
-  background-color: rgb(189, 183, 183,0.5);
+  background-color: rgb(189, 183, 183,0.7);
   font-size: 20px;
 }
+
+.content div {
+  margin: 0 20px;
+}
+
 button{
   height: 50px;
   width: 90px;
