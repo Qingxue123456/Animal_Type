@@ -14,6 +14,7 @@
   :disabled="disabled"
   v-model="localInputValue"
   @input="onInputChange"
+  @contextmenu.prevent
   class="input_area"
   v-focusTextArea
   ></textarea>

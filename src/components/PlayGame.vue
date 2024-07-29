@@ -70,7 +70,7 @@ export default {
     methods: {
         // Game
         startGame() {
-            this.timeLimit = this.selectTime;
+            this.timeLimit = +this.selectTime;
             this.resetValues();
             this.updateSentence();
             this.timer = setInterval(this.updateTimer, 1000);
@@ -79,7 +79,7 @@ export default {
 
         resetValues() {
             this.order = 1;
-            this.timeLeft = this.timeLimit;
+            this.timeLeft = +this.timeLimit;
             this.totalTime = 0;
             this.totalErrors = 0;
             this.characterTyped = 0;
@@ -104,7 +104,7 @@ export default {
                 clearInterval(this.timer);
                 this.timeLeft = this.timeLimit;
                 this.timer = setInterval(this.updateTimer, 1000);
-                this.totalTime += this.selectTime;
+                this.totalTime += this.timeLimit;
             } 
         },
 
@@ -114,7 +114,6 @@ export default {
             if( this.rightWidth === 100) {
                 this.finishGame();
             }
-
             // 
             if(this.leftWidth === 100) {
                 this.success = true;
@@ -159,7 +158,7 @@ export default {
 
             // Currently type one sentence
             if(this.inputValue === this.currentSentence) {
-                this.totalTime = this.totalTime + this.selectTime - this.timeLeft;
+                this.totalTime = this.totalTime + this.timeLimit - this.timeLeft;
                 this.order ++;
                 this.updateSentence();
                 this.inputValue = "";
@@ -177,7 +176,7 @@ export default {
 
         // Interrupt Game
         interruptGame() {
-            this.totalTime = this.totalTime + this.selectTime - this.timeLeft;
+            this.totalTime = this.totalTime + this.timeLimit - this.timeLeft;
             this.finishGame();
         },
 
@@ -187,7 +186,6 @@ export default {
             clearInterval(this.endGameTimer);
             this.gameOver = true;
             this.cpm = ((this.characterTyped / this.totalTime) * 60).toFixed(2);
-            console.log("totalTime: " + this.totalTime + " timeLeft: " + this.timeLeft + " characterTyped: " +  this.characterTyped)
         },
 
         // Return
@@ -196,7 +194,9 @@ export default {
         }
     },
     mounted() {
-        this.startGame()
+        if ( this.isGameStarted) {
+            this.startGame();
+        }
     }
 }
 </script>

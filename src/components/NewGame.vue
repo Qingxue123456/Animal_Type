@@ -31,17 +31,17 @@
               <div class="dolphin">
                 <div class="animalName">Dolphin</div>
                 <div>
-                  <button  @click="startGame(4)">1</button>
-                  <button  @click="startGame(5)">2</button>
-                  <button  @click="startGame(6)">3</button>
+                  <button  @click="startGame(4)">4</button>
+                  <button  @click="startGame(5)">5</button>
+                  <button  @click="startGame(6)">6</button>
                 </div>
               </div>
               <div class="penguin">
                 <div class="animalName">Penguin</div>
                 <div>
-                  <button  @click="startGame(7)">1</button>
-                  <button  @click="startGame(8)">2</button>
-                  <button  @click="startGame(9)">3</button>
+                  <button  @click="startGame(7)">7</button>
+                  <button  @click="startGame(8)">8</button>
+                  <button  @click="startGame(9)">9</button>
                 </div>
               </div>
             </div>
@@ -163,6 +163,8 @@ export default {
     startGame(index) {
       this.selectedLevel = index;
       this.isGameStarted = true;
+      this.leftWidth = 50;
+      this.rightWidth = 50;
     },
 
     // Show level Page
