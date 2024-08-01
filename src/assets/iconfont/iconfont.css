@@ -11,6 +11,11 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  cursor:pointer;
+}
+
+.iconfont:hover {
+  background-color: bisque;
 }
 
 .icon-musicfill:before {

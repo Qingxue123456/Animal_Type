@@ -45,7 +45,7 @@
                 </div>
               </div>
             </div>
-            <div class="hint">You need to correctly type the words on the screen in order, to help the polar bear on the left protect the Arctic ice caps!</div>
+            <div class="hint">You need to correctly type the words on the screen in order, to help animals on the left protect the Arctic ice caps!</div>
           </div>
           <!-- Play Game -->
           <PlayGame 

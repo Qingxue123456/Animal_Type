@@ -56,8 +56,8 @@ export default {
 
             // Game over
             gameOver: false,
-            successed: "Congratulations! You successfully completed the level and protected the Arctic, the habitat of the polar bears, from pollution by gasoline and other contaminants.",
-            failed:"Unfortunately, you didn't complete the level, and the Arctic, the habitat of the polar bears, ended up being polluted by gasoline and other contaminants.",
+            successed: "Congratulations! You successfully completed the level and protected the environment, the habitat of many animals, from pollution by gasoline and other contaminants.",
+            failed:"Unfortunately, you didn't complete the level, and the habitat of many animals ended up being polluted by gasoline and other contaminants.",
 
             // Result
             success: false,
