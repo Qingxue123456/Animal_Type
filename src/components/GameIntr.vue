@@ -33,7 +33,7 @@ export default {
 <style scoped>
 .gameIntro {
     height: 800px;
-    background: url('/public/image&video/cover_1.jpg') center center/cover no-repeat;
+    background: url('/public/image_and_video/cover_1.jpg') center center/cover no-repeat;
     color:white ;
     text-align: center;
     height: 100vh;

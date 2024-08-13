@@ -35,6 +35,6 @@ export default {
   top: 0;
   width: 100%;
   height: 100%;
-  background: #fff url(../public/image&video/loading.gif) no-repeat center;
+  background: #fff url(../public/image_and_video/loading.gif) no-repeat center;
 }
 </style>

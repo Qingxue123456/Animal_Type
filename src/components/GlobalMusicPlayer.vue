@@ -1,7 +1,7 @@
 <template>
   <div style="display: none;">
   <!-- Background Music -->
-  <audio ref="musicPlayer" src="music/Arctic_Dreams.mp3" loop preload="auto"></audio>
+  <audio ref="musicPlayer" src="/music/Arctic_Dreams.mp3" loop preload="auto"></audio>
   </div>
 </template>
 

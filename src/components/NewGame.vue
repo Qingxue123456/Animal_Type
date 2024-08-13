@@ -2,7 +2,7 @@
   <div class="newGame">
     <!-- Background -->
     <div class="backGround">
-      <img class="threeAnimal" src="image&video/cover_1.jpg" alt="picture" v-if="!isGameStarted">
+      <img class="threeAnimal" src="/image_and_video/cover_1.jpg" alt="picture" v-if="!isGameStarted">
       <img id="leftImage" :style="{ width: leftWidth + '%'}" :src="leftImageSrc" alt="Left Image" v-if="isGameStarted">
       <img id="rightImage" :style="{ width: rightWidth + '%'}" :src="rightImageSrc" alt="Right Image" v-if="isGameStarted">
     </div>
@@ -87,21 +87,21 @@ export default {
     
     leftImageSrc() {
         if (this.selectedLevel === 1 || this.selectedLevel === 2 || this.selectedLevel === 3) {
-            return 'image&video/left_1.jpg';
+            return '/image_and_video/left_1.jpg';
         } else if (this.selectedLevel === 4 || this.selectedLevel === 5 || this.selectedLevel === 6) {
-            return 'image&video/left_2.webp';
+            return '/image_and_video/left_2.webp';
         } else if (this.selectedLevel === 7 || this.selectedLevel === 8 || this.selectedLevel === 9) {
-            return 'image&video/left_3.webp';
+            return '/image_and_video/left_3.webp';
         }
         return 'image&video/cover_1';
     },
     rightImageSrc() {
         if (this.selectedLevel === 1 || this.selectedLevel === 2 || this.selectedLevel === 3) {
-            return 'image&video/right_1.webp';
+            return '/image_and_video/right_1.webp';
         } else if (this.selectedLevel === 4 || this.selectedLevel === 5 || this.selectedLevel === 6) {
-            return 'image&video/right_2.jpg';
+            return '/image_and_video/right_2.jpg';
         } else if (this.selectedLevel === 7 || this.selectedLevel === 8 || this.selectedLevel === 9) {
-            return 'image&video/right_3.jpg';
+            return '/image_and_video/right_3.jpg';
         }
         return 'image&video/cover_1';
     }

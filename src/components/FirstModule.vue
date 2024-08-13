@@ -2,7 +2,7 @@
   <div class="firstModule">
     <!-- Background Video -->
     <div class="background-cover-container">
-      <img id="cover"  src="image&video/cover_1.jpg" alt="cover">
+      <img id="cover"  src="/image_and_video/cover_1.jpg" alt="cover">
     </div>
     <!-- Title -->
     <div class="title">
