@@ -2,7 +2,7 @@
   <div class="newGame">
     <!-- Background -->
     <div class="backGround">
-      <img class="threeAnimal" src="/image_and_video/cover_1.jpg" alt="picture" v-if="!isGameStarted">
+      <img class="threeAnimal" src="@/assets/image_and_video/cover_1.jpg" alt="picture" v-if="!isGameStarted">
       <img id="leftImage" :style="{ width: leftWidth + '%'}" :src="leftImageSrc" alt="Left Image" v-if="isGameStarted">
       <img id="rightImage" :style="{ width: rightWidth + '%'}" :src="rightImageSrc" alt="Right Image" v-if="isGameStarted">
     </div>
@@ -67,6 +67,13 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import PlayGame from '@/components/PlayGame.vue';
+import left1 from '@/assets/image_and_video/left_1.jpg'
+import left2 from '@/assets/image_and_video/left_2.webp'
+import left3 from '@/assets/image_and_video/left_3.webp'
+import right1 from '@/assets/image_and_video/right_1.webp'
+import right2 from '@/assets/image_and_video/right_2.jpg'
+import right3 from '@/assets/image_and_video/right_3.jpg'
+import cover1 from '@/assets/image_and_video/cover_1.jpg'
 
 export default {
   name: 'NewGame',
@@ -87,23 +94,23 @@ export default {
     
     leftImageSrc() {
         if (this.selectedLevel === 1 || this.selectedLevel === 2 || this.selectedLevel === 3) {
-            return '/image_and_video/left_1.jpg';
+            return left1;
         } else if (this.selectedLevel === 4 || this.selectedLevel === 5 || this.selectedLevel === 6) {
-            return '/image_and_video/left_2.webp';
+            return left2;
         } else if (this.selectedLevel === 7 || this.selectedLevel === 8 || this.selectedLevel === 9) {
-            return '/image_and_video/left_3.webp';
+            return left3;
         }
-        return 'image&video/cover_1';
+        return cover1;
     },
     rightImageSrc() {
         if (this.selectedLevel === 1 || this.selectedLevel === 2 || this.selectedLevel === 3) {
-            return '/image_and_video/right_1.webp';
+            return right1;
         } else if (this.selectedLevel === 4 || this.selectedLevel === 5 || this.selectedLevel === 6) {
-            return '/image_and_video/right_2.jpg';
+            return right2;
         } else if (this.selectedLevel === 7 || this.selectedLevel === 8 || this.selectedLevel === 9) {
-            return '/image_and_video/right_3.jpg';
+            return right3;
         }
-        return 'image&video/cover_1';
+        return cover1;
     }
   },
 
